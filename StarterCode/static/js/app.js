@@ -89,7 +89,32 @@ d3.json("../data/samples.json").then((all_data) => {
 
 });
 
+
+//Create a function & Grab data from samples.json() file
 // function demographic(info) {
 
+    // d3.json("../data/samples.json").then((all_info) => {
+    //     var metadata = all_info.metadata
+    //     console.log(metadata);
+
+    //     var 
+    // });
+// };
+
+//Create a function that initializes dropdownmenu
+function init() {
+    
+    var dropdownMenu = d3.select("#selDataset");
+    //Call the json
+    d3.json("../data/samples.json").then((dropitem) => {
+        //for loop for every id to the dropdown...append to 'option' tag
+        dropitem.names.forEach((id) => {
+            dropdownMenu.append('option').text(id).property("value");
+
+        });
+    })
+
+    
 
 }
+init();
