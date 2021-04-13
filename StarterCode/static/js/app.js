@@ -52,11 +52,44 @@ d3.json("../data/samples.json").then((all_data) => {
             t: 100,
             b: 40
         }
-        
     };
 
 
-    Plotly.newPlot("bar", data, layout)
+    Plotly.newPlot("bar", data, layout);
+
+    var trace2 = {
+        x: otu_ids1,
+        y: sample_values1,
+        mode: "markers",
+        marker: {
+            size: sample_values1,
+            color: otu_ids1
+        },
+        text: otu_labels1
+    };
+
+    var layout2 = {
+        title: "Bubble Chart OTU ID vs Value",
+        xaxis: { title: "OTU ID" },
+        yaxis: { title: "OTU Value"},
+        margin: {
+            l: 50,
+            r: 5,
+            t: 50,
+            b: 100
+        }
+    
+    };
+    
+    var data2 = [trace2];
+
+
+    Plotly.newPlot('bubble', data2, layout2);
 
 
 });
+
+// function demographic(info) {
+
+
+}
